@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>UGR</title>
+        <meta name="viewport" content="width=device-width, user-scalable=no,initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/estilos.css">   
+         <script src="funciones.js"></script>
+    </head>
+    <body>
+        <SCRIPT  language=JavaScript> 
+            function go(){
+            if (document.form.password.value=='adri' && document.form.login.value=='adri'){ 
+                    document.form.submit(); 
+                } 
+                else{ 
+                     alert("Porfavor ingrese, nombre de usuario y contraseña correctos."); 
+                } 
+            }
+            function Registrarse(){
+                if ( !(document.form1.password.value=="" || document.form1.passwordrep.value=="" || document.form1.login.value=="" || document.form1.correo.value=="" )){
+                    if(document.form1.password.value==document.form1.passwordrep.value){
+                        if(revisarEmail(document.form1.correo.value)==true){
+                          alert("Registrado correctamente");
+                          document.form1.submit();
+                        }else{
+                          alert("El formato del campo email no es correcto");
+                        }
+                    }else{
+                        alert("La contraseña no coincide")
+                    }    
+                }else{
+                    alert("Algun campo del formulario esta vacio");
+                }
+            }
+            function abrirVentana(){
+                document.getElementById("box").style.display="block";
+            }
+            function cerrarVentana(){
+                document.getElementById("box").style.display="none";   
+            }
+            function cerrarVentana1(){
+                document.getElementById("box1").style.display="none";   
+            }
+            function abrirVentana1(){
+                document.getElementById("box1").style.display="block";
+            }
+        </SCRIPT> 
+        
+        <header class="container-fluid"> 
+            <div class="row">
+                <div style="text-align: center" class="col-md-2">
+                    <img   class="logo" src="imagenes/log.png"/>        
+                </div>
+                
+                <h1 style="text-align: center; margin-top: 1%; " class="col-md-2">MOVING</h1>       
+                         
+               <a class="col-xs-1 col-md-1 formato enlaceno" href="./agenda-registrado.html">Agenda</a>
+                <a class="col-xs-1 col-md-2 formato enlaceno" href="./user.html">Mi perfil</a> 
+                <a class="col-xs-1 col-md-1 formato enlaceno" href="./contacto-registrado.html">Contacto</a>
+                <a class="col-xs-1 col-md-2 formato enlaceno" href="./sobrenosotros-registrado.html">Sobre nosotros</a>              
+            
+                <div style="text-align: center" class="col-md-2">
+                    <p style="color: rgb(255,185,0);">Bienvenido Adrian</p>
+                    <a style="color: rgb(255,185,0);" href="./sobrenosotros.html">Cerrar sesion</a>
+                </div>
+            </div>    
+        </header>
+        
+        
+        
+        <div class="box" id="box">
+            <a class="boxclose" id="boxclose"></a>
+            <button onclick="cerrarVentana()" type="button" class="close" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+            </button>
+            <h3>Logeate</h3>
+            <FORM style="text-align: center" name=form action="sobrenosotros-registrado.html">
+                <div class="row">
+                    <p style="margin-right: 4%; margin-left: 4%;"> Usuario:   <INPUT type=text name=login > </p>
+                <p style="text-align: center">Contraseña:   <INPUT type=password name=password> <br> </p> 
+                </div>
+                <INPUT style="margin-top: 1%" onclick=go() type=button value=Acceder> <br>
+                <a style="text-align: right" href="">¿Has olvidado tu contraseña?</a>
+            </form>
+        </div>
+        
+        <div class="box" id="box1">
+            <a class="boxclose" id="boxclose1"></a>
+            <button onclick="cerrarVentana1()" type="button" class="close" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+            </button>
+            <h3>Registrar</h3>
+            <FORM style="text-align: center" name=form1 action="sobrenosotros-registrado.html">
+                <div class="row">
+                    <p style="margin-right: 8%; margin-left: 12%;"> Usuario: <br>   <INPUT type=text name=login > </p>
+                    <p style="text-align: center">Email: <br>  <INPUT type=text name=correo> <br> </p>
+                    <p style="text-align: center; margin-right: 8%; margin-left: 12%;">Contraseña: <br>  <INPUT type=password name=password> <br> </p>
+                    <p style="text-align: center">Repite la contraseña: <br>   <INPUT type=password name=passwordrep>  </p>
+                </div>
+                <INPUT style="margin-top: 1%" onclick=Registrarse() type=button value=Registrate>
+               
+            </form>
+        </div>
+        
+        <section style="padding-bottom: 1%" class="container-fluid">
+            <p style="  margin-left: 5%; margin-top: 2%; "><a style="color: rgb(255, 185, 0); " href="./index-registrado.html">Portada/</a><a style="color: rgb(255, 185, 0); " href="./sobrenosotros-registrado.html">Sobre nosotros</a></p>
+            <div class="row">
+                <figure  style="text-align: center; margin-top: 3%; " class="col-md-4">
+                    <img src="./imagenes/Alhambra.jpg"/>
+                </figure>
+                <article class="col-md-8">
+                    <h3 style="margin-top: 3%; text-align: center;">¿Quienes somos?</h3>   
+                    <p>Moving es el centro de referencia de la programación cultural de la UGR, desarrollando sus actividades dentro del Vicerrectorado de Extensión Universitaria. Espacio de reflexión global en torno a la creación y el conocimiento actual, dentro de su amplia programación se incluye actividades relacionadas con la práctica artística, musical, escénica y cinematográfica, así como con la divulgación de las humanidades, las ciencias sociales y jurídicas, las ciencias experimentales, las medioambientales y las tecnológicas.</p>
+                    <h3 style="margin-top: 3%; text-align: center">Intenciones</h3>
+                    <p>Moving intenta centralizar todas las actividades que organiza, propone o intermedia la ugr. Para que las personas que pertenecen a la UGR y aquellas ajenas a la institucion puedan informase de los distintos eventos de distintos temas como puede ser las salidas de senderismo, los cientos de charlas que organizan las distintas facultades y un largo etcetera de actividades. Ademas nos gustaria que todo el mundo aproveche las oportunidades que ofrece la universidad para culturizar granada. Ofrecemos la posibilidad de registrarse a cualquiera, obteniendo las ventajas de obtener una agenda personalizable y la suscripcion a un boletin diario.  </p>
+                    <h3 style="margin-top: 3%; text-align: center">Miembros</h3>
+                    <p style=" text-align: center">
+                        Rafel Doña Martinez. <br> Adrian Garcia Santiago. <br> Samuel Burgueño fuentes. <br> Federico Diaz de Vivar.
+                    </p>
+                </article>
+            </div>       
+        </section>
+  
+        <footer class="container-fluid">            
+            <div class="pie">
+                <div class="row">
+                    <div class="col-md-4">
+                    <p>
+                        2019 Granada, España <br> Moving@gmail.com
+                    </p>
+                    </div>
+                    <div class="col-md-3">                       
+                            <p class="alineado formato"> &copy;Derechos reservados de Moving</p>                        
+                    </div>
+                    <div class="col-md-3 ">
+                        <p class="formato">SIGUENOS EN FACEBOOK O TWITTER</p>                        
+                    </div>
+                    <div class="col-md-2">
+                        <button class="social" onclick="location.href='https://www.facebook.com'">
+                            <img src="imagenes/fb.png" />    
+                        </button>
+                        <button class="social" onclick="location.href='https://www.twitter.com'">
+                            <img src="imagenes/tw.png"/>
+                        </button>
+                    </div>
+                </div>
+            </div>          
+        </footer>
+       
+        
+        <script src="js/jquery.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+    </body>
+</html>

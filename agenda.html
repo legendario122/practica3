@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>UGR</title>
+        <meta name="viewport" content="width=device-width, user-scalable=no,initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/estilos.css">   
+         <script src="funciones.js"></script>
+         <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    </head>
+    
+    <body>
+        <SCRIPT  language=JavaScript> 
+            function go(){
+            if (document.form.password.value=='adri' && document.form.login.value=='adri'){ 
+                    document.form.submit(); 
+                } 
+                else{ 
+                     alert("Porfavor ingrese, nombre de usuario y contraseña correctos."); 
+                } 
+            }
+            function Registrarse(){
+                if ( !(document.form1.password.value=="" || document.form1.passwordrep.value=="" || document.form1.login.value=="" || document.form1.correo.value=="" )){
+                    if(document.form1.password.value==document.form1.passwordrep.value){
+                        if(revisarEmail(document.form1.correo.value)==true){
+                          alert("Registrado correctamente");
+                          document.form1.submit();
+                        }else{
+                          alert("El formato del campo email no es correcto");
+                        }
+                    }else{
+                        alert("La contraseña no coincide")
+                    }    
+                }else{
+                    alert("Algun campo del formulario esta vacio");
+                }
+            }
+            function abrirVentana(){
+                document.getElementById("box").style.display="block";
+            }
+            function cerrarVentana(){
+                document.getElementById("box").style.display="none";   
+            }
+            function cerrarVentana1(){
+                document.getElementById("box1").style.display="none";   
+            }
+            function abrirVentana1(){
+                document.getElementById("box1").style.display="block";
+            }
+             function filtros(){
+                alert("Filtro añadido.")
+            }
+        </SCRIPT> 
+        
+        <header class="container-fluid"> 
+            <div class="row">
+                <div style="text-align: center" class="col-md-2">
+                    <img   class="logo" src="imagenes/log.png"/>        
+                </div>
+                
+                <h1 style="text-align: center; margin-top: 1%; " class="col-md-2">MOVING</h1>       
+                         
+                <a class="col-xs-1 col-md-2 formato enlaceno" href="./agenda.html">Agenda</a>
+                <a class="col-xs-1 col-md-2 formato enlaceno" href="./contacto.html">Contacto</a>
+                <a class="col-xs-1 col-md-2 formato enlaceno" href="./sobrenosotros.html">Sobre nosotros</a>                 
+            
+                <div style="text-align: center" class="col-md-2">
+                    <button onclick="abrirVentana()"  class="registrar" >Iniciar sesion </button>
+                    <button onclick="abrirVentana1()"  class="registrar"  >¿te has registrado ya?</button>
+                </div>
+            </div>    
+        </header>
+        
+        
+        
+        <div class="box" id="box">
+            <a class="boxclose" id="boxclose"></a>
+            <button onclick="cerrarVentana()" type="button" class="close" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+            </button>
+            <h3>Logeate</h3>
+            <FORM style="text-align: center" name=form action="agenda-registrado.html">
+                <div class="row">
+                    <p style="margin-right: 4%; margin-left: 4%;"> Usuario:   <INPUT type=text name=login > </p>
+                <p style="text-align: center">Contraseña:   <INPUT type=password name=password> <br> </p> 
+                </div>
+                <INPUT style="margin-top: 1%" onclick=go() type=button value=Acceder> <br>
+                <a style="text-align: right" href="">¿Has olvidado tu contraseña?</a>
+            </form>
+        </div>
+        
+        <div class="box" id="box1">
+            <a class="boxclose" id="boxclose1"></a>
+            <button onclick="cerrarVentana1()" type="button" class="close" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+            </button>
+            <h3>Registrar</h3>
+            <FORM style="text-align: center" name=form1 action="agenda-registrado.html">
+                <div class="row">
+                    <p style="margin-right: 8%; margin-left: 12%;"> Usuario: <br>   <INPUT type=text name=login > </p>
+                    <p style="text-align: center">Email: <br>  <INPUT type=text name=correo> <br> </p>
+                    <p style="text-align: center; margin-right: 8%; margin-left: 12%;">Contraseña: <br>  <INPUT type=password name=password> <br> </p>
+                    <p style="text-align: center">Repite la contraseña: <br>   <INPUT type=password name=passwordrep>  </p>
+                </div>
+                <INPUT style="margin-top: 1%" onclick=Registrarse() type=button value=Registrate>
+               
+            </form>
+        </div>
+        
+        <section class="container-fluid">
+            <div class="row">
+                <aside class="col-md-2">
+                                <p style="  margin-left: 5%; margin-top: 2%; "><a style="color: rgb(255, 185, 0); " href="./index.html">Portada/</a><a style="color: rgb(255, 185, 0); " href="./agenda.html">Agenda</a></p>
+                                <div style="margin-left: 7%">
+                                    <h2 style="margin-top: 2%"> Filtros </h2>
+                                    <form action="Filtrar.html">
+                                        <input type="checkbox" name="transporte" value="1">Musica    <br>    
+                                        <input type="checkbox" name="transporte" value="2">Teatro <br>
+                                        <input type="checkbox" name="transporte" value="3">Exposiciones <br>
+                                        <input type="checkbox" name="transporte" value="1">Charla    <br>    
+                                        <input type="checkbox" name="transporte" value="2">Talleres <br>
+                                        <input type="checkbox" name="transporte" value="3">Deporte <br>
+                                        <input type="checkbox" name="transporte" value="3">Ciencia <br>
+                                        <input type="checkbox" name="transporte" value="3">Politica<br>
+                                        <input type="checkbox" name="transporte" value="3">Concursos<br>
+                                        <input style="margin-top: 3%; margin-bottom: 3%;" onclick="filtros()" type="submit" name="enviar" value="Buscar">
+                                    </form>
+                                </div>
+                    
+                </aside>
+                <article class="col-md-10">
+                    <form class="row">
+                        <p class="col-md-5" style="text-align: left; margin-top: 3%;">Busqueda por nombre: <input type="text" name="nombre"> 
+                            <a href="buscarnombre.html">   
+                                <i class="material-icons">
+                                    search
+                                </i>
+                            </a>
+                           
+                        </p>
+                         <p class="col-md-6" style="margin-top:3%; margin-right: 1%;">Busqueda por fecha: <input type="date" name="fecha" min="2019-05-14" value="2019-05-14"> al <input type="date" name="fecha" min="2019-05-14" value="2019-05-14"> <a href="buscarfecha.html">   
+                                <i class="material-icons">
+                                    search
+                                </i> 
+                            </a>
+                         </p>
+                    </form>
+                    <div style="margin-top: 1%; margin-right: 1%;" class="row">
+                        <div id="columna1" class="col-md-4">
+                            <div style="text-align: center; color: white" class="evento">
+                                <img src="./imagenes/event1.jpg"/>
+                                <h2>Evento 1</h2>
+                                <p>Desde el 15/05/2019 al 19/05/2019</p>
+                                <p> Coste: Free Lugar: PTS</p>
+                                <button type="button" onclick="location.href='./evento.html'" class="btn btn-danger">Leer mas</button>
+                            </div>
+                            
+                            <div style="text-align: center; color: white" class="evento">
+                                <img src="./imagenes/event4.jpg"/>
+                                <h2>Evento 4</h2>
+                                <p>Desde el 15/05/2019 al 19/05/2019</p>
+                                <p> Coste: Free Lugar: PTS</p>
+                                <button type="button" onclick="location.href='./evento.html'" class="btn btn-danger">Leer mas</button>
+                            </div>
+                            
+                            <div style="text-align: center; color: white" class="evento">
+                                <img src="./imagenes/event7.jpg"/>
+                                <h2>Evento 7</h2>
+                                <p>Desde el 15/05/2019 al 19/05/2019</p>
+                                <p> Coste: Free Lugar: PTS</p>
+                                <button type="button" onclick="location.href='./evento.html'" class="btn btn-danger">Leer mas</button>
+                            </div>
+                            
+                            <div style="text-align: center; color: white" class="evento">
+                                <img src="./imagenes/event10.jpg"/>
+                                <h2>Evento 10</h2>
+                                <p>Desde el 15/05/2019 al 19/05/2019</p>
+                                <p> Coste: Free Lugar: PTS</p>
+                                <button type="button" onclick="location.href='./evento.html'" class="btn btn-danger">Leer mas</button>
+                            </div>
+                        </div>
+                        <div id="columna2" class="col-md-4">
+                            
+                            <div style="text-align: center; color: white" class="evento">
+                                <img src="./imagenes/event2.jpg"/>
+                                <h2>Evento 2</h2>
+                                <p>Desde el 15/05/2019 al 19/05/2019</p>
+                                <p> Coste: Free Lugar: PTS</p>
+                                <button type="button" onclick="location.href='./evento.html'" class="btn btn-danger">Leer mas</button>
+                            </div>
+                            
+                            <div style="text-align: center; color: white" class="evento">
+                                <img src="./imagenes/event5.jpg"/>
+                                <h2>Evento 5</h2>
+                                <p>Desde el 15/05/2019 al 19/05/2019</p>
+                                <p> Coste: Free Lugar: PTS</p>
+                                <button type="button" onclick="location.href='./evento.html'" class="btn btn-danger">Leer mas</button>
+                            </div>
+                            
+                            <div style="text-align: center; color: white" class="evento">
+                                <img src="./imagenes/event8.jpg"/>
+                                <h2>Evento 8</h2>
+                                <p>Desde el 15/05/2019 al 19/05/2019</p>
+                                <p> Coste: Free Lugar: PTS</p>
+                                <button type="button" onclick="location.href='./evento.html'" class="btn btn-danger">Leer mas</button>
+                            </div>
+                            
+                            <div style="text-align: center; color: white" class="evento">
+                                <img src="./imagenes/event11.jpg"/>
+                                <h2>Evento 11</h2>
+                                <p>Desde el 15/05/2019 al 19/05/2019</p>
+                                <p> Coste: Free Lugar: PTS</p>
+                                <button type="button" onclick="location.href='./evento.html'" class="btn btn-danger">Leer mas</button>
+                            </div>
+                        </div>
+                        <div id="columna3" class="col-md-4">
+                            
+                            <div style="text-align: center; color: white" class="evento">
+                                <img src="./imagenes/event3.jpg"/>
+                                <h2>Evento 3</h2>
+                                <p>Desde el 15/05/2019 al 19/05/2019</p>
+                                <p> Coste: Free Lugar: PTS</p>
+                                <button type="button" onclick="location.href='./evento.html'" class="btn btn-danger">Leer mas</button>
+                            </div>
+                            
+                            <div style="text-align: center; color: white" class="evento">
+                                <img src="./imagenes/event6.jpg"/>
+                                <h2>Evento 6</h2>
+                                <p>Desde el 15/05/2019 al 19/05/2019</p>
+                                <p> Coste: Free Lugar: PTS</p>
+                                <button type="button" onclick="location.href='./evento.html'" class="btn btn-danger">Leer mas</button>
+                            </div>
+                            
+                            <div style="text-align: center; color: white" class="evento">
+                                <img src="./imagenes/event9.jpg"/>
+                                <h2>Evento 9</h2>
+                                <p>Desde el 15/05/2019 al 19/05/2019</p>
+                                <p> Coste: Free Lugar: PTS</p>
+                                <button type="button" onclick="location.href='./evento.html'" class="btn btn-danger">Leer mas</button>
+                            </div>
+                            
+                            <div style="text-align: center; color: white" class="evento">
+                                <img src="./imagenes/event12.jpg"/>
+                                <h2>Evento 12</h2>
+                                <p>Desde el 15/05/2019 al 19/05/2019</p>
+                                <p> Coste: Free Lugar: PTS</p>
+                                <button type="button" onclick="location.href='./evento.html'" class="btn btn-danger">Leer mas</button>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div style="text-align: center; ">
+                        <p>Pagina 1 de 2</p>
+                        <p>
+                            <button type="button" onclick="location.href='./agenda.html'" class="btn btn-light">Inicio</button> <button type="button" onclick="location.href='./agenda.html'" class="btn btn-light">1</button> <button type="button" onclick="location.href='./agenda2.html'" class="btn btn-light">2</button> <button type="button" onclick="location.href='./agenda2.html'" class="btn btn-light">Final</button>
+                        </p>
+                    </div>
+          
+                </article>   
+            </div>                  
+        </section>
+  
+        <footer class="container-fluid">            
+            <div class="pie">
+                <div class="row">
+                    <div class="col-md-4">
+                    <p>
+                        2019 Granada, España <br> Moving@gmail.com
+                    </p>
+                    </div>
+                    <div class="col-md-3">                       
+                            <p class="alineado formato"> &copy;Derechos reservados de Moving</p>                        
+                    </div>
+                    <div class="col-md-3 ">
+                        <p class="formato">SIGUENOS EN FACEBOOK O TWITTER</p>                        
+                    </div>
+                    <div class="col-md-2">
+                        <button class="social" onclick="location.href='https://www.facebook.com'">
+                            <img src="imagenes/fb.png" />    
+                        </button>
+                        <button class="social" onclick="location.href='https://www.twitter.com'">
+                            <img src="imagenes/tw.png"/>
+                        </button>
+                    </div>
+                </div>
+            </div>          
+        </footer>
+       
+        
+        <script src="js/jquery.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+    </body>
+</html>

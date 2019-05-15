@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>UGR</title>
+        <meta name="viewport" content="width=device-width, user-scalable=no,initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+        <link rel="stylesheet" href="css/estilos.css">
+         <script src="funciones.js"></script>
+    </head>
+    <body>
+        <SCRIPT  language=JavaScript>
+            function go(){
+            if (document.form.password.value=='adri' && document.form.login.value=='adri'){
+                    document.form.submit();
+                }
+                else{
+                     alert("Porfavor ingrese, nombre de usuario y contraseña correctos.");
+                }
+            }
+            function Registrarse(){
+                if ( !(document.form1.password.value=="" || document.form1.passwordrep.value=="" || document.form1.login.value=="" || document.form1.correo.value=="" )){
+                    if(document.form1.password.value==document.form1.passwordrep.value){
+                        if(revisarEmail(document.form1.correo.value)==true){
+                          alert("Registrado correctamente");
+                          document.form1.submit();
+                        }else{
+                          alert("El formato del campo email no es correcto");
+                        }
+                    }else{
+                        alert("La contraseña no coincide")
+                    }
+                }else{
+                    alert("Algun campo del formulario esta vacio");
+                }
+            }
+            function abrirVentana(){
+                document.getElementById("box").style.display="block";
+            }
+            function cerrarVentana(){
+                document.getElementById("box").style.display="none";
+            }
+            function cerrarVentana1(){
+                document.getElementById("box1").style.display="none";
+            }
+            function abrirVentana1(){
+                document.getElementById("box1").style.display="block";
+            }
+        </SCRIPT>
+
+        <header class="container-fluid">
+            <div class="row">
+                <div style="text-align: center" class="col-md-2">
+                    <img   class="logo" src="imagenes/log.png"/>
+                </div>
+
+                <h1 style="text-align: center; margin-top: 1%; " class="col-md-2">MOVING</h1>
+
+                <a class="col-xs-1 col-md-2 formato enlaceno" href="./agenda.html">Agenda</a>
+                <a class="col-xs-1 col-md-2 formato enlaceno" href="./contacto.html">Contacto</a>
+                <a class="col-xs-1 col-md-2 formato enlaceno" href="./sobrenosotros.html">Sobre nosotros</a>
+
+                <div style="text-align: center" class="col-md-2">
+                    <button onclick="abrirVentana()"  class="registrar" >Iniciar sesion </button>
+                    <button onclick="abrirVentana1()"  class="registrar"  >¿te has registrado ya?</button>
+                </div>
+            </div>
+        </header>
+
+
+
+        <div class="box" id="box">
+            <a class="boxclose" id="boxclose"></a>
+            <button onclick="cerrarVentana()" type="button" class="close" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+            </button>
+            <h3>Logeate</h3>
+            <FORM style="text-align: center" name=form action="index-registrado.html">
+                <div class="row">
+                    <p style="margin-right: 4%; margin-left: 4%;"> Usuario:   <INPUT type=text name=login > </p>
+                <p style="text-align: center">Contraseña:   <INPUT type=password name=password> <br> </p>
+                </div>
+                <INPUT style="margin-top: 1%" onclick=go() type=button value=Acceder> <br>
+                <a style="text-align: right" href="">¿Has olvidado tu contraseña?</a>
+            </form>
+        </div>
+
+        <div class="box" id="box1">
+            <a class="boxclose" id="boxclose1"></a>
+            <button onclick="cerrarVentana1()" type="button" class="close" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+            </button>
+            <h3>Registrar</h3>
+            <FORM style="text-align: center" name=form1 action="index-registrado.html">
+                <div class="row">
+                    <p style="margin-right: 8%; margin-left: 12%;"> Usuario: <br>   <INPUT type=text name=login > </p>
+                    <p style="text-align: center">Email: <br>  <INPUT type=text name=correo> <br> </p>
+                    <p style="text-align: center; margin-right: 8%; margin-left: 12%;">Contraseña: <br>  <INPUT type=password name=password> <br> </p>
+                    <p style="text-align: center">Repite la contraseña: <br>   <INPUT type=password name=passwordrep>  </p>
+                </div>
+                <INPUT style="margin-top: 1%" onclick=Registrarse() type=button value=Registrate>
+
+            </form>
+        </div>
+
+        <section class="container-fluid">
+
+            <div class="row">
+                <article class="col-xs-12 col-sm-8 col-md-9 col-lg-9">
+                    <h3 style="text-align: center; margin-top: 3%;">EVENTOS MAS POPULARES</h3>
+                    <div id="contenedor">
+    <div id="myCarousel" class="carousel slide">
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+      </ol>
+      <!-- Carousel items -->
+      <div class="carousel-inner">
+        <div class=" pepe active carousel-item"><a href="evento.html"><img  src="imagenes/event1.jpg" alt="banner1" /></a>
+            <h3>Evento 1</h3>
+            <p>...</p>
+        </div>
+        <div class=" pepe carousel-item"><a href="evento.html"><img  src="imagenes/event2.jpg" alt="banner2" /></a>
+            <h3>Evento 2</h3>
+            <p>...</p>
+        </div>
+          <div  class="pepe carousel-item"><a href="evento.html"><img  src="imagenes/event3.jpg" alt="banner3" /></a>
+            <h3>Evento 3</h3>
+            <p>...</p>
+        </div>
+
+      </div>
+      <!-- Carousel nav -->
+      <a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </a>
+  <a class="carousel-control-next" href="#myCarousel" data-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </a>
+    </div>
+</div>
+                </article>
+                <aside class="col-xs-12 col-sm-4 col-md-3 col-lg-3">
+                    <h3 style="text-align: center; margin-top: 8%;">¿Aun no te has registrado?</h3>
+                    <p>
+                        En menos de dos minutos podras conseguir:
+                    </p>
+                    <ul>
+                        <li>Promociones  para eventos exclusivos</li>
+                        <li>Un diseño personalizado de la agenda</li>
+                        <li>Suscripcion al boletin de eventos diario</li>
+                        <li>Realizar reservas con mayor antelacion</li>
+
+                    </ul>
+                </aside>
+            </div>
+
+        </section>
+
+        <footer class="container-fluid">
+            <div class="pie">
+                <div class="row">
+                    <div class="col-md-4">
+                    <p>
+                        2019 Granada, España <br> Moving@gmail.com
+                    </p>
+                    </div>
+                    <div class="col-md-3">
+                            <p class="alineado formato"> &copy;Derechos reservados de Moving</p>
+                    </div>
+                    <div class="col-md-3 ">
+                        <p class="formato">SIGUENOS EN FACEBOOK O TWITTER</p>
+                    </div>
+                    <div class="col-md-2">
+                        <button class="social" onclick="location.href='https://www.facebook.com'">
+                            <img src="imagenes/fb.png" />
+                        </button>
+                        <button class="social" onclick="location.href='https://www.twitter.com'">
+                            <img src="imagenes/tw.png"/>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+
+        <script src="http://code.jquery.com/jquery.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script>
+    $(document).ready(function(){
+        $('.myCarousel').carousel()
+    });
+</script>
+    </body>
+</html>
